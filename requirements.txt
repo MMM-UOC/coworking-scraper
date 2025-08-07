@@ -1,3 +1,7 @@
+# Requires Google Chrome installed in the environment
+#You can do this by running the following command in your terminal:
+#   sudo apt-get update
+#   sudo apt-get install -y google-chrome-stable
 selenium>=4.20
 pandas>=2.0
 beautifulsoup4>=4.12
