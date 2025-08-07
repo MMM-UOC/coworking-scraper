@@ -1,3 +1,9 @@
+# Before running, install dependencies with:
+# pip install -r requirements.txt
+#
+# This script requires Chrome, ChromeDriver, and a Codespace or similar environment.
+#
+
 import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
