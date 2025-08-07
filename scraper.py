@@ -378,9 +378,20 @@ if __name__ == "__main__":
             
         print(f"\nStage 1 complete! Found {len(summary_data)} spaces")
         
+        # Ask user how many spaces to scrape
+        try:
+            user_input = input("How many coworking spaces do you want to scrape? (Press Enter for all): ")
+            num_to_scrape = int(user_input) if user_input.strip() else len(summary_data)
+            if num_to_scrape > len(summary_data) or num_to_scrape <= 0:
+                print(f"Invalid number, scraping all {len(summary_data)} spaces.")
+                num_to_scrape = len(summary_data)
+        except Exception:
+            print(f"Invalid input, scraping all {len(summary_data)} spaces.")
+            num_to_scrape = len(summary_data)
+        
         # Automate scraping all spaces
-        spaces_to_scrape = summary_data
-        print(f"\nScraping details for all {len(spaces_to_scrape)} spaces...")
+        spaces_to_scrape = summary_data[:num_to_scrape]
+        print(f"\nScraping details for {len(spaces_to_scrape)} spaces...")
         
         # STAGE 2: Scrape details
         print("\n" + "="*50)
